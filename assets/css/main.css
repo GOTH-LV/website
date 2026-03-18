@@ -1,0 +1,56 @@
+:root {
+  --background: #0a0a0c;
+  --rose: #362A2F;
+  --text: #b7b3bb;
+}
+
+body {
+  background-color: var(--background);
+  overflow-x: hidden;
+  font-family: "Inconsolata", monospace;
+  color: var(--text);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rose {
+  position: fixed;
+  font-size: clamp(1px, 1vh, 100vw);
+  color: var(--rose);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  height: 100vh;
+  width: auto;
+  padding: 0;
+}
+
+/*
+.rose::after {
+  box-shadow: 0 0 200px 200px red inset;
+  z-index: 1;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top:0;
+  left:0;
+  transform: translate(0%,-100%);
+  display: block;
+  position: relative;
+}
+*/
+.content {
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: clamp(18px, 2vw, 20px);
+  line-height: 1.4;
+  text-align: center;
+}
+
+

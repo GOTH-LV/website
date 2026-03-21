@@ -2,6 +2,8 @@
   --background: #0a0a0c;
   --rose: #362A2F;
   --text: #b7b3bb;
+  /*--highlight: #ad4772;*/
+  --highlight: #b56285;
 }
 
 body {
@@ -28,7 +30,7 @@ body {
 }
 
 .rose::after {
-  box-shadow: 0 0 200px 100px var(--background) inset;
+  box-shadow: 0 0 150px 150px var(--background) inset;
   z-index: 1;
   content: "";
   height: 100%;
@@ -53,4 +55,6 @@ body {
   text-align: center;
 }
 
-
+a {
+  color: var(--highlight);
+}

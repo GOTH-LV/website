@@ -1,5 +1,4 @@
 - page with instructions for peering
-- add footer with year and copyright?
 - projects page
 - Hang project
 - implement security.txt

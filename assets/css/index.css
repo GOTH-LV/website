@@ -1,0 +1,100 @@
+ :root {
+  --background: #0a0a0c;
+  --rose: #362A2F;
+  --text: #b7b3bb;
+  --highlight: #b56285;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Inconsolata";
+  font-size: 2.2vh;
+  /* browsers come with different defaults */
+  margin: 0;
+  /* allow flex align for content */
+  display: flex;
+  /* center content on screen */
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  /* stop horizontal scrolling
+  because ascii art is *big* */
+  overflow-x: hidden;
+}
+
+@media (min-height: 1800px) {
+  body {
+    font-size: 1.8vh;
+  }
+}
+
+.ascii-bg {
+  color: var(--rose);
+  font-size: 1vh;
+  /* move to the very bottom */
+  z-index: -2;
+  /* relative to browser window,
+  so the background never moves */
+  position: fixed;
+  /* set spacing exactly 1x font size
+  to make ascii art look correct */
+  line-height: 1;
+  /* disable selection using mouse */
+  pointer-events: none;
+  /* move element top left corner
+  to the center of the screen,
+  and then pull it back by half its size */
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* vignette */
+.ascii-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    transparent 40%,
+    var(--background) 90%
+  );
+}
+
+.content {
+  /* stack children top -> bottom and center */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+th {
+  padding-right: 1rem;
+  text-align: left;
+}
+
+td {
+  text-align: right;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.nav {
+  position: fixed;
+  display: flex;
+  top: 2rem;
+  gap: 1.5vh;
+}
+
+.footer {
+  position: fixed;
+  bottom: 2rem;
+}
+
+a {
+  color: var(--highlight);
+  text-decoration: none;
+  font-weight: bold;
+}
